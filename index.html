@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -28,10 +29,9 @@
 #kif-root .kif-item-icon img { width: 34px !important; height: 34px !important; object-fit: cover !important; border-radius: 6px !important; }
 #kif-root .kif-item-name { font-size: 14px !important; font-weight: 500 !important; color: #1a1a1a !important; display: block !important; }
 #kif-root .kif-item-meta { font-size: 12px !important; color: #666 !important; margin-top: 2px !important; display: block !important; }
-#kif-root .kif-ml { margin-left: auto !important; }
+#kif-root .kif-ml { margin-left: auto !important; display: flex !important; align-items: center !important; gap: 8px !important; }
 #kif-root .kif-badge { font-size: 11px !important; padding: 3px 9px !important; border-radius: 20px !important; font-weight: 500 !important; white-space: nowrap !important; display: inline-block !important; }
 #kif-root .b-pending { background: #f7f7f5 !important; color: #666 !important; border: 1px solid rgba(0,0,0,0.12) !important; }
-#kif-root .b-review { background: #e6f1fb !important; color: #185fa5 !important; border: 1px solid #b5d4f4 !important; }
 #kif-root .b-approved { background: #eaf3de !important; color: #3b6d11 !important; border: 1px solid #c0dd97 !important; }
 #kif-root .b-rejected { background: #fcebeb !important; color: #a32d2d !important; border: 1px solid #f7c1c1 !important; }
 #kif-root .kif-detail { display: none !important; background: #f7f7f5 !important; border-radius: 6px !important; padding: 14px 16px !important; margin-bottom: 4px !important; border: 1px solid rgba(0,0,0,0.1) !important; }
@@ -60,19 +60,34 @@
 #kif-root .kif-cl-label { font-size: 13px !important; color: #1a1a1a !important; cursor: pointer !important; line-height: 1.5 !important; }
 #kif-root .kif-cl-label.done { color: #999 !important; text-decoration: line-through !important; }
 #kif-root .kif-btn-row { display: flex !important; gap: 8px !important; margin-top: 14px !important; flex-wrap: wrap !important; }
-#kif-root button.kif-btn { font-family: inherit !important; cursor: pointer !important; border-radius: 6px !important; padding: 8px 16px !important; font-size: 13px !important; font-weight: 500 !important; border: 1px solid rgba(0,0,0,0.15) !important; background: #fff !important; color: #1a1a1a !important; display: inline-block !important; }
+#kif-root button.kif-btn { font-family: inherit !important; cursor: pointer !important; border-radius: 6px !important; padding: 8px 16px !important; font-size: 13px !important; font-weight: 500 !important; border: 1px solid rgba(0,0,0,0.15) !important; background: #fff !important; color: #1a1a1a !important; display: inline-flex !important; align-items: center !important; gap: 5px !important; }
 #kif-root button.kif-btn-primary { background: #e6f1fb !important; color: #185fa5 !important; border-color: #b5d4f4 !important; }
 #kif-root button.kif-btn-approve { background: #eaf3de !important; color: #3b6d11 !important; border-color: #c0dd97 !important; }
 #kif-root button.kif-btn-reject { background: #fcebeb !important; color: #a32d2d !important; border-color: #f7c1c1 !important; }
+#kif-root button.kif-btn-delete { background: #fcebeb !important; color: #a32d2d !important; border-color: #f7c1c1 !important; padding: 4px 10px !important; font-size: 12px !important; }
+#kif-root button.kif-btn-teams { background: #f0f4ff !important; color: #4a5fe0 !important; border-color: #c5cef7 !important; }
 #kif-root button.kif-btn-sm { padding: 3px 10px !important; font-size: 12px !important; }
 #kif-root .kif-comment { width: 100% !important; padding: 8px 10px !important; font-size: 13px !important; border: 1px solid rgba(0,0,0,0.2) !important; border-radius: 6px !important; background: #fff !important; color: #1a1a1a !important; margin-bottom: 8px !important; display: block !important; }
-#kif-root .kif-name-row { display: flex !important; align-items: center !important; gap: 8px !important; margin-bottom: 10px !important; font-size: 13px !important; color: #666 !important; }
-#kif-root .kif-name-row .kif-input { flex: 1 !important; width: auto !important; }
 #kif-root .kif-empty { padding: 20px 0 !important; font-size: 14px !important; color: #666 !important; text-align: center !important; display: block !important; }
 #kif-root .kif-rev-wrap { margin-bottom: 12px !important; }
 #kif-root .kif-flex1 { flex: 1 !important; }
+#kif-root .kif-saving { font-size: 12px !important; color: #999 !important; display: inline-block !important; }
 #kif-root .kif-toast { display: none; position: fixed !important; bottom: 20px !important; right: 20px !important; background: #eaf3de !important; border: 1px solid #c0dd97 !important; color: #3b6d11 !important; padding: 12px 18px !important; border-radius: 10px !important; font-size: 13px !important; font-weight: 500 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; z-index: 9999 !important; align-items: center !important; gap: 8px !important; }
 #kif-root .kif-toast.show { display: flex !important; }
+#kif-root .kif-modal-bg { display: none; position: fixed !important; inset: 0 !important; background: rgba(0,0,0,0.45) !important; z-index: 8888 !important; align-items: center !important; justify-content: center !important; }
+#kif-root .kif-modal-bg.show { display: flex !important; }
+#kif-root .kif-modal { background: #fff !important; border-radius: 12px !important; padding: 24px !important; max-width: 360px !important; width: 92% !important; box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important; }
+#kif-root .kif-modal-title { font-size: 16px !important; font-weight: 600 !important; margin-bottom: 6px !important; display: block !important; }
+#kif-root .kif-modal-text { font-size: 13px !important; color: #666 !important; margin-bottom: 16px !important; display: block !important; line-height: 1.5 !important; }
+#kif-root .kif-assignee-item { display: flex !important; align-items: center !important; gap: 10px !important; padding: 10px !important; border: 1px solid rgba(0,0,0,0.1) !important; border-radius: 6px !important; margin-bottom: 8px !important; cursor: pointer !important; }
+#kif-root .kif-assignee-item:hover { background: #f7f7f5 !important; }
+#kif-root .kif-assignee-item.selected { border-color: #b5d4f4 !important; background: #e6f1fb !important; }
+#kif-root .kif-setup-box { background: #faeeda !important; border: 1px solid #fac775 !important; border-radius: 10px !important; padding: 20px !important; margin-bottom: 20px !important; }
+#kif-root .kif-setup-title { font-size: 15px !important; font-weight: 600 !important; color: #854f0b !important; display: block !important; margin-bottom: 6px !important; }
+#kif-root .kif-setup-text { font-size: 13px !important; color: #854f0b !important; display: block !important; margin-bottom: 14px !important; line-height: 1.5 !important; }
+#kif-root .kif-token-row { display: flex !important; gap: 8px !important; }
+#kif-root .kif-token-row .kif-input { flex: 1 !important; width: auto !important; }
+#kif-root .kif-token-ok { background: #eaf3de !important; border: 1px solid #c0dd97 !important; border-radius: 10px !important; padding: 12px 16px !important; margin-bottom: 20px !important; font-size: 13px !important; color: #3b6d11 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
 </style>
 </head>
 <body>
@@ -82,7 +97,27 @@
     <div class="kif-logo">✅</div>
     <div>
       <span class="kif-title">KI-Freigabe Marketing</span>
-      <span class="kif-sub">Freigabe für KI-generierte Inhalte – 1 Prüfer</span>
+      <span class="kif-sub">Freigabe für KI-generierte Inhalte – Dübör AG</span>
+    </div>
+    <span id="kif-sync-status" class="kif-saving" style="margin-left:auto!important"></span>
+  </div>
+
+  <!-- Token Setup Banner -->
+  <div id="kif-setup-banner" style="display:none!important">
+    <div class="kif-setup-box">
+      <span class="kif-setup-title">🔑 GitHub Token einrichten</span>
+      <span class="kif-setup-text">Damit Einreichungen gespeichert werden und alle im Team denselben Stand sehen, einmalig deinen GitHub Personal Access Token eingeben. Er wird nur in deinem Browser gespeichert – nie auf GitHub hochgeladen.</span>
+      <div class="kif-token-row">
+        <input type="password" class="kif-input" id="kif-token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+        <button class="kif-btn kif-btn-primary" onclick="kifSaveToken()">Speichern</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="kif-token-ok-banner" style="display:none!important">
+    <div class="kif-token-ok">
+      <span>🔑 Token gespeichert – Daten werden mit GitHub synchronisiert</span>
+      <button class="kif-btn kif-btn-sm" onclick="kifResetToken()">ändern</button>
     </div>
   </div>
 
@@ -109,6 +144,15 @@
         <button class="kif-btn kif-btn-sm" onclick="kifClearFile()">entfernen</button>
       </div>
       <div class="kif-field">
+        <label class="kif-label">Eingereicht von</label>
+        <select class="kif-select" id="kif-submitter">
+          <option value="">– Person wählen –</option>
+          <option value="Armin Erni">Armin Erni</option>
+          <option value="Holger Nussbeck">Holger Nussbeck</option>
+          <option value="Gabriella Rubino">Gabriella Rubino</option>
+        </select>
+      </div>
+      <div class="kif-field">
         <label class="kif-label">Art des Inhalts</label>
         <select class="kif-select" id="kif-type">
           <option>KI-Bild (Marketing)</option>
@@ -121,10 +165,6 @@
       <div class="kif-field">
         <label class="kif-label">Beschreibung / Verwendungszweck</label>
         <textarea class="kif-textarea" id="kif-desc" placeholder="z.B. «Produktbild für LinkedIn-Post»"></textarea>
-      </div>
-      <div class="kif-field">
-        <label class="kif-label">Dein Name (Einreichende Person)</label>
-        <input type="text" class="kif-input" id="kif-submitter" placeholder="Vorname Nachname">
       </div>
       <span class="kif-sec-title" style="margin-top:16px!important">Selbstkontrolle vor Einreichung</span>
       <div id="kif-checklist">
@@ -143,32 +183,112 @@
 
   <div id="kif-review" class="kif-view"></div>
 </div>
+
+<!-- Zuweisung Modal -->
+<div class="kif-modal-bg" id="kif-assign-modal">
+  <div class="kif-modal">
+    <span class="kif-modal-title">👤 Prüfer zuweisen</span>
+    <span class="kif-modal-text">Wähle eine Person – sie erhält eine Teams-Nachricht mit dem Freigabe-Link.</span>
+    <div id="kif-assignee-list" style="margin-bottom:16px!important"></div>
+    <div style="display:flex!important;gap:8px!important">
+      <button class="kif-btn kif-btn-teams" onclick="kifSendTeams()">💬 In Teams benachrichtigen</button>
+      <button class="kif-btn" onclick="kifCloseModal()">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
 <div class="kif-toast" id="kif-toast">✅ <span id="kif-toast-msg"></span></div>
 </div>
 
 <script>
-var KIF = {
-  items: [
-    {id:1,type:'KI-Bild (Social Media)',desc:'Produktfoto für LinkedIn – Backtrennmittel Serie',submitter:'Armin E.',date:'05.06.2026',status:'approved',reviewer:'Sandra M.',rdone:true,file:'produktfoto_linkedin.jpg',notes:'Geprüft, keine Marken erkannt.',imgData:''},
-    {id:2,type:'KI-Bild (Marketing)',desc:'Bannerbild für Newsletter – Frühjahrsprodukte',submitter:'Sandra M.',date:'06.06.2026',status:'pending',reviewer:'',rdone:false,file:'banner_newsletter.jpg',notes:'',imgData:''},
-    {id:3,type:'KI-generierter Text',desc:'Produktbeschreibung Webseite – Waffeleisen-Segment',submitter:'Armin E.',date:'07.06.2026',status:'pending',reviewer:'',rdone:false,file:'produkttext_waffeln.txt',notes:'',imgData:''}
-  ],
-  pendingImg: null
-};
+// ── Konfiguration ────────────────────────────────────────────
+var GH_USER = 'ArminErni';
+var GH_REPO = 'ki-freigabe';
+var GH_FILE = 'data.json';
+var APP_URL = 'https://'+GH_USER+'.github.io/'+GH_REPO;
+
+var TEAM = [
+  {name:'Armin Erni',     email:'armin.erni@dueboer.com'},
+  {name:'Holger Nussbeck',email:'holger.nussbeck@dueboer.com'},
+  {name:'Gabriella Rubino',email:'g.rubino@dueboer.com'}
+];
+
+var KIF = { items:[], sha:null, pendingImg:null, assignTarget:null, selectedAssignee:null };
+
+// ── Token (localStorage) ─────────────────────────────────────
+function kifGetToken(){ return localStorage.getItem('kif_gh_token')||''; }
+
+function kifSaveToken(){
+  var t=document.getElementById('kif-token-input').value.trim();
+  if(!t){kifToast('⚠️ Bitte Token eingeben'); return;}
+  localStorage.setItem('kif_gh_token',t);
+  kifShowTokenBanner();
+  kifLoad();
+}
+
+function kifResetToken(){
+  localStorage.removeItem('kif_gh_token');
+  kifShowTokenBanner();
+}
+
+function kifShowTokenBanner(){
+  var hasToken=!!kifGetToken();
+  document.getElementById('kif-setup-banner').style.setProperty('display', hasToken?'none':'block','important');
+  document.getElementById('kif-token-ok-banner').style.setProperty('display', hasToken?'block':'none','important');
+}
+
+// ── GitHub Sync ──────────────────────────────────────────────
+function kifSetStatus(msg){ document.getElementById('kif-sync-status').textContent=msg; }
+
+async function kifLoad(){
+  var token=kifGetToken();
+  if(!token){ KIF.items=[]; kifRenderAll(); return; }
+  kifSetStatus('⏳ Laden…');
+  try {
+    var r=await fetch('https://api.github.com/repos/'+GH_USER+'/'+GH_REPO+'/contents/'+GH_FILE,
+      {headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ KIF.items=[]; KIF.sha=null; kifSetStatus(''); kifRenderAll(); return; }
+    if(r.status===401){ kifSetStatus('⚠️ Token ungültig'); localStorage.removeItem('kif_gh_token'); kifShowTokenBanner(); return; }
+    var json=await r.json();
+    KIF.sha=json.sha;
+    KIF.items=JSON.parse(atob(json.content.replace(/\n/g,'')));
+    kifSetStatus('');
+  } catch(e){ kifSetStatus('⚠️ Offline – Daten nicht geladen'); KIF.items=[]; }
+  kifRenderAll();
+}
+
+async function kifSave(){
+  var token=kifGetToken();
+  if(!token){ kifRenderAll(); kifToast('⚠️ Kein Token – nur lokal gespeichert'); return; }
+  kifSetStatus('💾 Speichern…');
+  try {
+    var content=btoa(unescape(encodeURIComponent(JSON.stringify(KIF.items,null,2))));
+    var body={message:'Update data.json',content:content};
+    if(KIF.sha) body.sha=KIF.sha;
+    var r=await fetch('https://api.github.com/repos/'+GH_USER+'/'+GH_REPO+'/contents/'+GH_FILE,
+      {method:'PUT',headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+       body:JSON.stringify(body)});
+    var json=await r.json();
+    if(json.content) KIF.sha=json.content.sha;
+    kifSetStatus('✓ Gespeichert');
+    setTimeout(function(){kifSetStatus('')},2500);
+  } catch(e){ kifSetStatus('⚠️ Fehler beim Speichern'); }
+  kifRenderAll();
+}
+
+// ── Render ───────────────────────────────────────────────────
+function kifRenderAll(){ kifRenderDashboard(); kifRenderReview(); }
 
 function kifBadge(s){
   if(s==='approved') return '<span class="kif-badge b-approved">✓ Freigegeben</span>';
   if(s==='rejected') return '<span class="kif-badge b-rejected">✗ Abgelehnt</span>';
   return '<span class="kif-badge b-pending">○ Ausstehend</span>';
 }
-function kifIcon(t,imgData){
-  if(imgData) return '<img src="'+imgData+'" alt="">';
-  return t.includes('Video')?'🎬':t.includes('Text')?'📝':t.includes('Avatar')?'👤':'🖼';
-}
+function kifIcon(t,img){ return img?'<img src="'+img+'" alt="">':t.includes('Video')?'🎬':t.includes('Text')?'📝':t.includes('Avatar')?'👤':'🖼'; }
 function kifInit(n){ var p=(n||'?').trim().split(' '); return p.length>=2?(p[0][0]+p[1][0]).toUpperCase():(n||'?').slice(0,2).toUpperCase(); }
 
 function kifRenderDashboard(){
-  var items=KIF.items, total=items.length,
+  var items=KIF.items,total=items.length,
     pending=items.filter(function(i){return i.status==='pending'}).length,
     approved=items.filter(function(i){return i.status==='approved'}).length;
   var h='<div class="kif-stat-grid">';
@@ -176,11 +296,12 @@ function kifRenderDashboard(){
   h+='<div class="kif-stat"><span class="kif-stat-n">'+pending+'</span><span class="kif-stat-l">Ausstehend</span></div>';
   h+='<div class="kif-stat"><span class="kif-stat-n">'+approved+'</span><span class="kif-stat-l">Freigegeben</span></div>';
   h+='</div><div class="kif-card"><span class="kif-sec-title">Alle Einreichungen</span>';
+  if(!items.length){ h+='<span class="kif-empty">Noch keine Einreichungen</span>'; }
   items.slice().reverse().forEach(function(item){
     h+='<div class="kif-item-row" onclick="kifToggleDetail('+item.id+',\'d\')">';
     h+='<div class="kif-item-icon">'+kifIcon(item.type,item.imgData)+'</div>';
     h+='<div><span class="kif-item-name">'+item.file+'</span><span class="kif-item-meta">'+item.type+' · '+item.submitter+' · '+item.date+'</span></div>';
-    h+='<div class="kif-ml">'+kifBadge(item.status)+'</div></div>';
+    h+='<div class="kif-ml">'+kifBadge(item.status)+'<button class="kif-btn kif-btn-delete" onclick="kifDelete('+item.id+',event)">🗑</button></div></div>';
     h+='<div class="kif-detail" id="kif-det-d-'+item.id+'">'+kifDetailInner(item,'d')+'</div>';
   });
   h+='</div>';
@@ -205,18 +326,27 @@ function kifRenderReview(){
 function kifDetailInner(item,ctx){
   var h='<div class="kif-preview">'+(item.imgData?'<img src="'+item.imgData+'" alt="">':kifIcon(item.type,''))+'</div>';
   h+='<span class="kif-desc-text">'+item.desc+'</span>';
-  h+='<div class="kif-rev-wrap">';
-  h+='<div class="kif-rev-row"><div class="kif-avatar">'+kifInit(item.reviewer)+'</div><div class="kif-flex1"><span class="kif-rname">'+(item.reviewer||'Noch nicht zugewiesen')+'</span><span class="kif-rrole">Prüfer</span></div>'+(item.rdone?'<span class="kif-badge b-approved">Freigegeben</span>':'<span class="kif-badge b-pending">Offen</span>')+'</div>';
-  h+='</div>';
+  h+='<div class="kif-rev-wrap"><div class="kif-rev-row">';
+  h+='<div class="kif-avatar">'+kifInit(item.reviewer)+'</div>';
+  h+='<div class="kif-flex1"><span class="kif-rname">'+(item.reviewer||'Noch nicht zugewiesen')+'</span><span class="kif-rrole">Prüfer</span></div>';
+  h+=(item.rdone?'<span class="kif-badge b-approved">Freigegeben</span>':'<span class="kif-badge b-pending">Offen</span>');
+  h+='</div></div>';
   if(item.notes) h+='<span class="kif-note">💬 '+item.notes+'</span>';
-  if(ctx==='r' && item.status==='pending'){
+  if(ctx==='r'&&item.status==='pending'){
     h+='<input class="kif-comment" id="kif-note-'+item.id+'" placeholder="Kommentar (optional)">';
-    h+='<div class="kif-name-row">Dein Name: <input type="text" class="kif-input" id="kif-rname-'+item.id+'" placeholder="Vorname Nachname"></div>';
-    h+='<div class="kif-btn-row"><button class="kif-btn kif-btn-approve" onclick="kifApprove('+item.id+',event)">✓ Freigeben</button><button class="kif-btn kif-btn-reject" onclick="kifReject('+item.id+',event)">✗ Ablehnen</button></div>';
+    h+='<div class="kif-btn-row">';
+    h+='<button class="kif-btn kif-btn-approve" onclick="kifApprove('+item.id+',event)">✓ Freigeben</button>';
+    h+='<button class="kif-btn kif-btn-reject" onclick="kifReject('+item.id+',event)">✗ Ablehnen</button>';
+    h+='<button class="kif-btn kif-btn-teams" onclick="kifOpenAssign('+item.id+',event)">💬 Prüfer zuweisen</button>';
+    h+='</div>';
+  }
+  if(ctx==='d'&&item.status==='pending'){
+    h+='<div class="kif-btn-row"><button class="kif-btn kif-btn-teams" onclick="kifOpenAssign('+item.id+',event)">💬 Prüfer zuweisen</button></div>';
   }
   return h;
 }
 
+// ── Aktionen ─────────────────────────────────────────────────
 function kifToggleDetail(id,ctx){
   var panel=document.getElementById('kif-det-'+ctx+'-'+id);
   if(!panel) return;
@@ -234,12 +364,10 @@ function kifToggle(row){
 function kifApprove(id,e){
   e.stopPropagation();
   var item=KIF.items.find(function(i){return i.id===id});
-  var rn=document.getElementById('kif-rname-'+id), nt=document.getElementById('kif-note-'+id);
-  item.reviewer=(rn&&rn.value.trim())?rn.value.trim():'Prüfer';
-  item.rdone=true; item.status='approved';
+  var nt=document.getElementById('kif-note-'+id);
+  item.reviewer=item.reviewer||'Prüfer'; item.rdone=true; item.status='approved';
   if(nt&&nt.value) item.notes=nt.value;
-  kifRenderDashboard(); kifRenderReview();
-  kifToast('Inhalt freigegeben! ✓');
+  kifSave(); kifToast('Inhalt freigegeben ✓');
 }
 
 function kifReject(id,e){
@@ -248,22 +376,31 @@ function kifReject(id,e){
   var nt=document.getElementById('kif-note-'+id);
   item.status='rejected';
   if(nt&&nt.value) item.notes=nt.value;
-  kifRenderDashboard(); kifRenderReview();
-  kifToast('Inhalt abgelehnt.');
+  kifSave(); kifToast('Inhalt abgelehnt.');
+}
+
+function kifDelete(id,e){
+  e.stopPropagation();
+  if(!confirm('Einreichung wirklich löschen?')) return;
+  KIF.items=KIF.items.filter(function(i){return i.id!==id});
+  kifSave(); kifToast('Einreichung gelöscht.');
 }
 
 function kifSubmit(){
-  var checks=document.querySelectorAll('#kif-checklist .kif-cb'), allOk=true;
+  var sub=document.getElementById('kif-submitter').value;
+  if(!sub){kifToast('⚠️ Bitte Person wählen!'); return;}
+  var checks=document.querySelectorAll('#kif-checklist .kif-cb'),allOk=true;
   checks.forEach(function(c){if(!c.checked) allOk=false;});
   if(!allOk){kifToast('⚠️ Bitte zuerst alle 6 Punkte abhaken!'); return;}
   var fname=document.getElementById('kif-fname').textContent||('inhalt_'+Date.now());
-  var d=new Date(), ds=d.getDate().toString().padStart(2,'0')+'.'+(d.getMonth()+1).toString().padStart(2,'0')+'.'+d.getFullYear();
-  KIF.items.push({id:KIF.items.length+1,type:document.getElementById('kif-type').value,desc:document.getElementById('kif-desc').value||'–',submitter:document.getElementById('kif-submitter').value||'Unbekannt',date:ds,status:'pending',reviewer:'',rdone:false,file:fname,notes:'',imgData:KIF.pendingImg||''});
+  var d=new Date(),ds=d.getDate().toString().padStart(2,'0')+'.'+(d.getMonth()+1).toString().padStart(2,'0')+'.'+d.getFullYear();
+  var newId=KIF.items.length?Math.max.apply(null,KIF.items.map(function(i){return i.id}))+1:1;
+  KIF.items.push({id:newId,type:document.getElementById('kif-type').value,desc:document.getElementById('kif-desc').value||'–',submitter:sub,date:ds,status:'pending',reviewer:'',rdone:false,file:fname,notes:'',imgData:KIF.pendingImg||''});
   document.getElementById('kif-desc').value='';
   document.getElementById('kif-submitter').value='';
   checks.forEach(function(c){c.checked=false;c.parentElement.querySelector('.kif-cl-label').classList.remove('done')});
   kifClearFile();
-  kifRenderDashboard(); kifRenderReview();
+  kifSave();
   kifTab('dashboard');
   kifToast('Eingereicht! Prüfer muss freigeben.');
 }
@@ -273,10 +410,49 @@ function kifClearFile(){
   document.getElementById('kif-fprev').style.setProperty('display','none','important');
   document.getElementById('kif-fname').textContent='';
   document.getElementById('kif-file').value='';
-  var thumb=document.getElementById('kif-img-thumb');
-  thumb.src=''; thumb.style.setProperty('display','none','important');
+  var t=document.getElementById('kif-img-thumb'); t.src=''; t.style.setProperty('display','none','important');
 }
 
+// ── Zuweisung & Teams ────────────────────────────────────────
+function kifOpenAssign(id,e){
+  e.stopPropagation();
+  var item=KIF.items.find(function(i){return i.id===id});
+  KIF.assignTarget=item; KIF.selectedAssignee=null;
+  var others=TEAM.filter(function(m){return m.name!==item.submitter});
+  var h='';
+  others.forEach(function(m,i){
+    h+='<div class="kif-assignee-item" onclick="kifSelectAssignee('+i+',this)">';
+    h+='<div class="kif-avatar">'+kifInit(m.name)+'</div>';
+    h+='<div><span style="font-size:14px!important;font-weight:500!important;display:block!important">'+m.name+'</span>';
+    h+='<span style="font-size:12px!important;color:#666!important">'+m.email+'</span></div></div>';
+  });
+  var list=document.getElementById('kif-assignee-list');
+  list.innerHTML=h; list._others=others;
+  document.getElementById('kif-assign-modal').classList.add('show');
+}
+
+function kifSelectAssignee(idx,el){
+  document.querySelectorAll('.kif-assignee-item').forEach(function(x){x.classList.remove('selected')});
+  el.classList.add('selected');
+  KIF.selectedAssignee=document.getElementById('kif-assignee-list')._others[idx];
+}
+
+function kifSendTeams(){
+  if(!KIF.selectedAssignee){kifToast('⚠️ Bitte zuerst eine Person wählen.'); return;}
+  var item=KIF.assignTarget;
+  item.reviewer=KIF.selectedAssignee.name;
+  var msg='Hallo '+KIF.selectedAssignee.name.split(' ')[0]+'! Bitte prüfe folgende KI-Einreichung von '+item.submitter+': «'+item.desc+'». Freigabe hier: '+APP_URL;
+  window.open('https://teams.microsoft.com/l/chat/0/0?users='+encodeURIComponent(KIF.selectedAssignee.email)+'&message='+encodeURIComponent(msg),'_blank');
+  kifSave(); kifCloseModal();
+  kifToast('Teams geöffnet – Nachricht an '+KIF.selectedAssignee.name);
+}
+
+function kifCloseModal(){
+  document.getElementById('kif-assign-modal').classList.remove('show');
+  KIF.assignTarget=null; KIF.selectedAssignee=null;
+}
+
+// ── UI Helpers ───────────────────────────────────────────────
 function kifTab(name){
   var tabs=['dashboard','upload','review'];
   document.querySelectorAll('.kif-tab').forEach(function(t,i){t.classList.toggle('active',tabs[i]===name)});
@@ -290,50 +466,31 @@ function kifToast(msg){
   setTimeout(function(){t.classList.remove('show')},3500);
 }
 
+function kifHandleFile(f){
+  if(!f) return;
+  document.getElementById('kif-fname').textContent=f.name;
+  document.getElementById('kif-fprev').style.setProperty('display','flex','important');
+  if(f.type.startsWith('image/')){
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      KIF.pendingImg=ev.target.result;
+      var th=document.getElementById('kif-img-thumb');
+      th.src=ev.target.result; th.style.setProperty('display','block','important');
+    };
+    reader.readAsDataURL(f);
+  } else { KIF.pendingImg=null; }
+}
+
 var drop=document.getElementById('kif-drop');
 drop.addEventListener('click',function(){document.getElementById('kif-file').click()});
-document.getElementById('kif-file').addEventListener('change',function(e){
-  var f=e.target.files[0];
-  if(!f) return;
-  document.getElementById('kif-fname').textContent=f.name;
-  document.getElementById('kif-fprev').style.setProperty('display','flex','important');
-  if(f.type.startsWith('image/')){
-    var reader=new FileReader();
-    reader.onload=function(ev){
-      KIF.pendingImg=ev.target.result;
-      var thumb=document.getElementById('kif-img-thumb');
-      thumb.src=ev.target.result;
-      thumb.style.setProperty('display','block','important');
-    };
-    reader.readAsDataURL(f);
-  } else {
-    KIF.pendingImg=null;
-  }
-});
+document.getElementById('kif-file').addEventListener('change',function(e){kifHandleFile(e.target.files[0])});
 drop.addEventListener('dragover',function(e){e.preventDefault();this.style.setProperty('background','#f7f7f5','important')});
 drop.addEventListener('dragleave',function(){this.style.removeProperty('background')});
-drop.addEventListener('drop',function(e){
-  e.preventDefault();this.style.removeProperty('background');
-  var f=e.dataTransfer.files[0];
-  if(!f) return;
-  document.getElementById('kif-fname').textContent=f.name;
-  document.getElementById('kif-fprev').style.setProperty('display','flex','important');
-  if(f.type.startsWith('image/')){
-    var reader=new FileReader();
-    reader.onload=function(ev){
-      KIF.pendingImg=ev.target.result;
-      var thumb=document.getElementById('kif-img-thumb');
-      thumb.src=ev.target.result;
-      thumb.style.setProperty('display','block','important');
-    };
-    reader.readAsDataURL(f);
-  } else {
-    KIF.pendingImg=null;
-  }
-});
+drop.addEventListener('drop',function(e){e.preventDefault();this.style.removeProperty('background');kifHandleFile(e.dataTransfer.files[0])});
 
-kifRenderDashboard();
-kifRenderReview();
+// ── Start ────────────────────────────────────────────────────
+kifShowTokenBanner();
+kifLoad();
 </script>
 </body>
 </html>
