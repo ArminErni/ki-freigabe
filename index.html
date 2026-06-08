@@ -24,8 +24,8 @@
 #kif-root .kif-card { background: #fff !important; border: 1px solid rgba(0,0,0,0.12) !important; border-radius: 10px !important; padding: 16px 20px !important; margin-bottom: 16px !important; }
 #kif-root .kif-sec-title { font-size: 11px !important; font-weight: 600 !important; color: #999 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important; margin-bottom: 12px !important; display: block !important; }
 #kif-root .kif-item-row { display: flex !important; align-items: center !important; gap: 12px !important; padding: 11px 0 !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; cursor: pointer !important; }
-#kif-root .kif-item-row:last-of-type { border-bottom: none !important; }
-#kif-root .kif-item-icon { width: 34px !important; height: 34px !important; border-radius: 6px !important; background: #f7f7f5 !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 16px !important; flex-shrink: 0 !important; }
+#kif-root .kif-item-icon { width: 34px !important; height: 34px !important; border-radius: 6px !important; background: #f7f7f5 !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 16px !important; flex-shrink: 0 !important; overflow: hidden !important; }
+#kif-root .kif-item-icon img { width: 34px !important; height: 34px !important; object-fit: cover !important; border-radius: 6px !important; }
 #kif-root .kif-item-name { font-size: 14px !important; font-weight: 500 !important; color: #1a1a1a !important; display: block !important; }
 #kif-root .kif-item-meta { font-size: 12px !important; color: #666 !important; margin-top: 2px !important; display: block !important; }
 #kif-root .kif-ml { margin-left: auto !important; }
@@ -36,7 +36,8 @@
 #kif-root .b-rejected { background: #fcebeb !important; color: #a32d2d !important; border: 1px solid #f7c1c1 !important; }
 #kif-root .kif-detail { display: none !important; background: #f7f7f5 !important; border-radius: 6px !important; padding: 14px 16px !important; margin-bottom: 4px !important; border: 1px solid rgba(0,0,0,0.1) !important; }
 #kif-root .kif-detail.open { display: block !important; }
-#kif-root .kif-preview { background: #fff !important; border: 1px solid rgba(0,0,0,0.1) !important; border-radius: 6px !important; height: 80px !important; display: flex !important; align-items: center !important; justify-content: center !important; margin-bottom: 10px !important; font-size: 28px !important; }
+#kif-root .kif-preview { background: #fff !important; border: 1px solid rgba(0,0,0,0.1) !important; border-radius: 6px !important; min-height: 80px !important; max-height: 220px !important; display: flex !important; align-items: center !important; justify-content: center !important; margin-bottom: 10px !important; font-size: 28px !important; overflow: hidden !important; }
+#kif-root .kif-preview img { max-width: 100% !important; max-height: 220px !important; object-fit: contain !important; border-radius: 6px !important; }
 #kif-root .kif-desc-text { font-size: 13px !important; color: #666 !important; margin-bottom: 12px !important; display: block !important; }
 #kif-root .kif-rev-row { display: flex !important; align-items: center !important; gap: 10px !important; padding: 8px 0 !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
 #kif-root .kif-avatar { width: 32px !important; height: 32px !important; border-radius: 50% !important; background: #e6f1fb !important; color: #185fa5 !important; font-size: 11px !important; font-weight: 600 !important; display: flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; }
@@ -48,6 +49,7 @@
 #kif-root .kif-upload-p { font-size: 14px !important; color: #666 !important; display: block !important; }
 #kif-root .kif-upload-small { font-size: 12px !important; color: #999 !important; display: block !important; margin-top: 4px !important; }
 #kif-root .kif-file-prev { display: flex !important; align-items: center !important; gap: 10px !important; padding: 10px 12px !important; background: #f7f7f5 !important; border-radius: 6px !important; margin-bottom: 14px !important; border: 1px solid rgba(0,0,0,0.1) !important; }
+#kif-root .kif-img-thumb { width: 48px !important; height: 48px !important; object-fit: cover !important; border-radius: 4px !important; flex-shrink: 0 !important; }
 #kif-root .kif-field { margin-bottom: 14px !important; }
 #kif-root .kif-label { display: block !important; font-size: 13px !important; color: #666 !important; margin-bottom: 5px !important; font-weight: 500 !important; }
 #kif-root .kif-select, #kif-root .kif-input, #kif-root .kif-textarea { width: 100% !important; padding: 9px 11px !important; font-size: 14px !important; border: 1px solid rgba(0,0,0,0.2) !important; border-radius: 6px !important; background: #fff !important; color: #1a1a1a !important; display: block !important; }
@@ -80,7 +82,7 @@
     <div class="kif-logo">✅</div>
     <div>
       <span class="kif-title">KI-Freigabe Marketing</span>
-      <span class="kif-sub">4-Augen-Prinzip für KI-generierte Inhalte</span>
+      <span class="kif-sub">Freigabe für KI-generierte Inhalte – 1 Prüfer</span>
     </div>
   </div>
 
@@ -101,6 +103,7 @@
         <input type="file" id="kif-file" style="display:none!important" accept="image/*,video/*,.txt,.pdf,.docx">
       </div>
       <div class="kif-file-prev" id="kif-fprev" style="display:none!important">
+        <img id="kif-img-thumb" class="kif-img-thumb" src="" alt="" style="display:none!important">
         <span>📎</span>
         <span id="kif-fname" style="font-size:13px!important;flex:1!important"></span>
         <button class="kif-btn kif-btn-sm" onclick="kifClearFile()">entfernen</button>
@@ -146,24 +149,27 @@
 <script>
 var KIF = {
   items: [
-    {id:1,type:'KI-Bild (Social Media)',desc:'Produktfoto für LinkedIn – Backtrennmittel Serie',submitter:'Armin E.',date:'05.06.2026',status:'approved',reviewer1:'Sandra M.',r1done:true,reviewer2:'Armin E.',r2done:true,file:'produktfoto_linkedin.jpg',notes:'Geprüft, keine Marken erkannt.'},
-    {id:2,type:'KI-Bild (Marketing)',desc:'Bannerbild für Newsletter – Frühjahrsprodukte',submitter:'Sandra M.',date:'06.06.2026',status:'review',reviewer1:'Armin E.',r1done:true,reviewer2:'',r2done:false,file:'banner_newsletter.jpg',notes:''},
-    {id:3,type:'KI-generierter Text',desc:'Produktbeschreibung Webseite – Waffeleisen-Segment',submitter:'Armin E.',date:'07.06.2026',status:'pending',reviewer1:'',r1done:false,reviewer2:'',r2done:false,file:'produkttext_waffeln.txt',notes:''}
-  ]
+    {id:1,type:'KI-Bild (Social Media)',desc:'Produktfoto für LinkedIn – Backtrennmittel Serie',submitter:'Armin E.',date:'05.06.2026',status:'approved',reviewer:'Sandra M.',rdone:true,file:'produktfoto_linkedin.jpg',notes:'Geprüft, keine Marken erkannt.',imgData:''},
+    {id:2,type:'KI-Bild (Marketing)',desc:'Bannerbild für Newsletter – Frühjahrsprodukte',submitter:'Sandra M.',date:'06.06.2026',status:'pending',reviewer:'',rdone:false,file:'banner_newsletter.jpg',notes:'',imgData:''},
+    {id:3,type:'KI-generierter Text',desc:'Produktbeschreibung Webseite – Waffeleisen-Segment',submitter:'Armin E.',date:'07.06.2026',status:'pending',reviewer:'',rdone:false,file:'produkttext_waffeln.txt',notes:'',imgData:''}
+  ],
+  pendingImg: null
 };
 
 function kifBadge(s){
   if(s==='approved') return '<span class="kif-badge b-approved">✓ Freigegeben</span>';
-  if(s==='review') return '<span class="kif-badge b-review">⏳ In Prüfung (1/2)</span>';
   if(s==='rejected') return '<span class="kif-badge b-rejected">✗ Abgelehnt</span>';
   return '<span class="kif-badge b-pending">○ Ausstehend</span>';
 }
-function kifIcon(t){ return t.includes('Video')?'🎬':t.includes('Text')?'📝':t.includes('Avatar')?'👤':'🖼'; }
+function kifIcon(t,imgData){
+  if(imgData) return '<img src="'+imgData+'" alt="">';
+  return t.includes('Video')?'🎬':t.includes('Text')?'📝':t.includes('Avatar')?'👤':'🖼';
+}
 function kifInit(n){ var p=(n||'?').trim().split(' '); return p.length>=2?(p[0][0]+p[1][0]).toUpperCase():(n||'?').slice(0,2).toUpperCase(); }
 
 function kifRenderDashboard(){
   var items=KIF.items, total=items.length,
-    pending=items.filter(function(i){return i.status==='pending'||i.status==='review'}).length,
+    pending=items.filter(function(i){return i.status==='pending'}).length,
     approved=items.filter(function(i){return i.status==='approved'}).length;
   var h='<div class="kif-stat-grid">';
   h+='<div class="kif-stat"><span class="kif-stat-n">'+total+'</span><span class="kif-stat-l">Total eingereicht</span></div>';
@@ -172,7 +178,7 @@ function kifRenderDashboard(){
   h+='</div><div class="kif-card"><span class="kif-sec-title">Alle Einreichungen</span>';
   items.slice().reverse().forEach(function(item){
     h+='<div class="kif-item-row" onclick="kifToggleDetail('+item.id+',\'d\')">';
-    h+='<div class="kif-item-icon">'+kifIcon(item.type)+'</div>';
+    h+='<div class="kif-item-icon">'+kifIcon(item.type,item.imgData)+'</div>';
     h+='<div><span class="kif-item-name">'+item.file+'</span><span class="kif-item-meta">'+item.type+' · '+item.submitter+' · '+item.date+'</span></div>';
     h+='<div class="kif-ml">'+kifBadge(item.status)+'</div></div>';
     h+='<div class="kif-detail" id="kif-det-d-'+item.id+'">'+kifDetailInner(item,'d')+'</div>';
@@ -182,12 +188,12 @@ function kifRenderDashboard(){
 }
 
 function kifRenderReview(){
-  var pending=KIF.items.filter(function(i){return i.status==='pending'||i.status==='review'});
+  var pending=KIF.items.filter(function(i){return i.status==='pending'});
   var h='<div class="kif-card"><span class="kif-sec-title">Warten auf Freigabe</span>';
   if(!pending.length){ h+='<span class="kif-empty">Keine offenen Einreichungen 🎉</span></div>'; document.getElementById('kif-review').innerHTML=h; return; }
   pending.forEach(function(item){
     h+='<div class="kif-item-row" onclick="kifToggleDetail('+item.id+',\'r\')">';
-    h+='<div class="kif-item-icon">'+kifIcon(item.type)+'</div>';
+    h+='<div class="kif-item-icon">'+kifIcon(item.type,item.imgData)+'</div>';
     h+='<div><span class="kif-item-name">'+item.file+'</span><span class="kif-item-meta">'+item.type+' · Eingereicht von '+item.submitter+'</span></div>';
     h+='<div class="kif-ml">'+kifBadge(item.status)+'</div></div>';
     h+='<div class="kif-detail" id="kif-det-r-'+item.id+'">'+kifDetailInner(item,'r')+'</div>';
@@ -197,14 +203,13 @@ function kifRenderReview(){
 }
 
 function kifDetailInner(item,ctx){
-  var h='<div class="kif-preview">'+kifIcon(item.type)+'</div>';
+  var h='<div class="kif-preview">'+(item.imgData?'<img src="'+item.imgData+'" alt="">':kifIcon(item.type,''))+'</div>';
   h+='<span class="kif-desc-text">'+item.desc+'</span>';
   h+='<div class="kif-rev-wrap">';
-  h+='<div class="kif-rev-row"><div class="kif-avatar">'+kifInit(item.reviewer1)+'</div><div class="kif-flex1"><span class="kif-rname">'+(item.reviewer1||'Noch nicht zugewiesen')+'</span><span class="kif-rrole">Prüfer 1</span></div>'+(item.r1done?'<span class="kif-badge b-approved">Geprüft</span>':'<span class="kif-badge b-pending">Offen</span>')+'</div>';
-  h+='<div class="kif-rev-row"><div class="kif-avatar">'+kifInit(item.reviewer2)+'</div><div class="kif-flex1"><span class="kif-rname">'+(item.reviewer2||'Noch nicht zugewiesen')+'</span><span class="kif-rrole">Prüfer 2</span></div>'+(item.r2done?'<span class="kif-badge b-approved">Geprüft</span>':'<span class="kif-badge b-pending">Offen</span>')+'</div>';
+  h+='<div class="kif-rev-row"><div class="kif-avatar">'+kifInit(item.reviewer)+'</div><div class="kif-flex1"><span class="kif-rname">'+(item.reviewer||'Noch nicht zugewiesen')+'</span><span class="kif-rrole">Prüfer</span></div>'+(item.rdone?'<span class="kif-badge b-approved">Freigegeben</span>':'<span class="kif-badge b-pending">Offen</span>')+'</div>';
   h+='</div>';
   if(item.notes) h+='<span class="kif-note">💬 '+item.notes+'</span>';
-  if(ctx==='r' && item.status!=='approved' && item.status!=='rejected'){
+  if(ctx==='r' && item.status==='pending'){
     h+='<input class="kif-comment" id="kif-note-'+item.id+'" placeholder="Kommentar (optional)">';
     h+='<div class="kif-name-row">Dein Name: <input type="text" class="kif-input" id="kif-rname-'+item.id+'" placeholder="Vorname Nachname"></div>';
     h+='<div class="kif-btn-row"><button class="kif-btn kif-btn-approve" onclick="kifApprove('+item.id+',event)">✓ Freigeben</button><button class="kif-btn kif-btn-reject" onclick="kifReject('+item.id+',event)">✗ Ablehnen</button></div>';
@@ -230,12 +235,11 @@ function kifApprove(id,e){
   e.stopPropagation();
   var item=KIF.items.find(function(i){return i.id===id});
   var rn=document.getElementById('kif-rname-'+id), nt=document.getElementById('kif-note-'+id);
-  var name=(rn&&rn.value.trim())?rn.value.trim():'Prüfer';
-  if(!item.r1done){item.reviewer1=name;item.r1done=true;item.status='review';}
-  else{item.reviewer2=name;item.r2done=true;item.status='approved';}
+  item.reviewer=(rn&&rn.value.trim())?rn.value.trim():'Prüfer';
+  item.rdone=true; item.status='approved';
   if(nt&&nt.value) item.notes=nt.value;
   kifRenderDashboard(); kifRenderReview();
-  kifToast(item.status==='approved'?'Inhalt vollständig freigegeben!':'Erste Prüfung ok – zweiter Prüfer ausstehend.');
+  kifToast('Inhalt freigegeben! ✓');
 }
 
 function kifReject(id,e){
@@ -245,7 +249,7 @@ function kifReject(id,e){
   item.status='rejected';
   if(nt&&nt.value) item.notes=nt.value;
   kifRenderDashboard(); kifRenderReview();
-  kifToast('Inhalt abgelehnt und zurück an Einreicher.');
+  kifToast('Inhalt abgelehnt.');
 }
 
 function kifSubmit(){
@@ -254,26 +258,29 @@ function kifSubmit(){
   if(!allOk){kifToast('⚠️ Bitte zuerst alle 6 Punkte abhaken!'); return;}
   var fname=document.getElementById('kif-fname').textContent||('inhalt_'+Date.now());
   var d=new Date(), ds=d.getDate().toString().padStart(2,'0')+'.'+(d.getMonth()+1).toString().padStart(2,'0')+'.'+d.getFullYear();
-  KIF.items.push({id:KIF.items.length+1,type:document.getElementById('kif-type').value,desc:document.getElementById('kif-desc').value||'–',submitter:document.getElementById('kif-submitter').value||'Unbekannt',date:ds,status:'pending',reviewer1:'',r1done:false,reviewer2:'',r2done:false,file:fname,notes:''});
+  KIF.items.push({id:KIF.items.length+1,type:document.getElementById('kif-type').value,desc:document.getElementById('kif-desc').value||'–',submitter:document.getElementById('kif-submitter').value||'Unbekannt',date:ds,status:'pending',reviewer:'',rdone:false,file:fname,notes:'',imgData:KIF.pendingImg||''});
   document.getElementById('kif-desc').value='';
   document.getElementById('kif-submitter').value='';
   checks.forEach(function(c){c.checked=false;c.parentElement.querySelector('.kif-cl-label').classList.remove('done')});
   kifClearFile();
   kifRenderDashboard(); kifRenderReview();
   kifTab('dashboard');
-  kifToast('Eingereicht! Zwei Prüfer müssen freigeben.');
+  kifToast('Eingereicht! Prüfer muss freigeben.');
 }
 
 function kifClearFile(){
+  KIF.pendingImg=null;
   document.getElementById('kif-fprev').style.setProperty('display','none','important');
   document.getElementById('kif-fname').textContent='';
   document.getElementById('kif-file').value='';
+  var thumb=document.getElementById('kif-img-thumb');
+  thumb.src=''; thumb.style.setProperty('display','none','important');
 }
 
 function kifTab(name){
   var tabs=['dashboard','upload','review'];
   document.querySelectorAll('.kif-tab').forEach(function(t,i){t.classList.toggle('active',tabs[i]===name)});
-  document.querySelectorAll('.kif-view').forEach(function(v,i){v.classList.toggle('active',tabs[i]===name)});
+  document.querySelectorAll('.kif-view').forEach(function(v,i){v.classList.toggle('active',['kif-dashboard','kif-upload','kif-review'][i]==='kif-'+name)});
 }
 
 function kifToast(msg){
@@ -286,14 +293,43 @@ function kifToast(msg){
 var drop=document.getElementById('kif-drop');
 drop.addEventListener('click',function(){document.getElementById('kif-file').click()});
 document.getElementById('kif-file').addEventListener('change',function(e){
-  if(e.target.files[0]){document.getElementById('kif-fname').textContent=e.target.files[0].name;document.getElementById('kif-fprev').style.setProperty('display','flex','important');}
+  var f=e.target.files[0];
+  if(!f) return;
+  document.getElementById('kif-fname').textContent=f.name;
+  document.getElementById('kif-fprev').style.setProperty('display','flex','important');
+  if(f.type.startsWith('image/')){
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      KIF.pendingImg=ev.target.result;
+      var thumb=document.getElementById('kif-img-thumb');
+      thumb.src=ev.target.result;
+      thumb.style.setProperty('display','block','important');
+    };
+    reader.readAsDataURL(f);
+  } else {
+    KIF.pendingImg=null;
+  }
 });
 drop.addEventListener('dragover',function(e){e.preventDefault();this.style.setProperty('background','#f7f7f5','important')});
 drop.addEventListener('dragleave',function(){this.style.removeProperty('background')});
 drop.addEventListener('drop',function(e){
   e.preventDefault();this.style.removeProperty('background');
   var f=e.dataTransfer.files[0];
-  if(f){document.getElementById('kif-fname').textContent=f.name;document.getElementById('kif-fprev').style.setProperty('display','flex','important');}
+  if(!f) return;
+  document.getElementById('kif-fname').textContent=f.name;
+  document.getElementById('kif-fprev').style.setProperty('display','flex','important');
+  if(f.type.startsWith('image/')){
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      KIF.pendingImg=ev.target.result;
+      var thumb=document.getElementById('kif-img-thumb');
+      thumb.src=ev.target.result;
+      thumb.style.setProperty('display','block','important');
+    };
+    reader.readAsDataURL(f);
+  } else {
+    KIF.pendingImg=null;
+  }
 });
 
 kifRenderDashboard();
